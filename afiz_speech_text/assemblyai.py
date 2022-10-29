@@ -32,11 +32,11 @@ class AssemblyAI:
 @patch
 def submit_url_for_transcription(self:AssemblyAI,
                                  audio_url: str, #Audio URL 
-                                 sentiment_analysis: bool = False, # Is required
-                                 auto_chapters: bool = False, # Is Auto Chapters
-                                 entity_detection: bool = False,
-                                 auto_highlights: bool = False,
-                                ) -> dict:
+                                 sentiment_analysis: bool = False, # Include Sentiment Analysis
+                                 auto_chapters: bool = False, # Include Auto Chapaters
+                                 entity_detection: bool = False, # Include Entity Detection
+                                 auto_highlights: bool = False, # Include Auto Highlights 
+                                ):
         ''' Submit Audio/Video URL for Transcription '''
         json = {
             "audio_url": audio_url,
@@ -52,7 +52,7 @@ def submit_url_for_transcription(self:AssemblyAI,
 @patch
 def get_transcription_results(self:AssemblyAI,
                               transcripiton_id: str, # Transcrption ID that we got from `submit_url_for_transcription`
-                              all_details: bool = False # Is All details required
+                              all_details: bool = False # Include All the details, by default it `text` and `id` are returned
                              ):
     """Get the transcription results for the given id"""
     full_details = self.get_status_of_transcription(transcripiton_id)
