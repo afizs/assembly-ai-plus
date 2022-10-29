@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "afiz-speech-text"
-  site-url: "https://afizs.github.io/afiz-speech-text"
+  title: "assembly-ai-plus"
+  site-url: "https://afizs.github.io/assembly-ai-plus"
   description: "Transcribe and understand your audio/video files super fast."
   repo-branch: main
-  repo-url: "https://github.com/afizs/afiz-speech-text"
+  repo-url: "https://github.com/afizs/assembly-ai-plus"
