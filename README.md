@@ -19,6 +19,10 @@ This Library provides a
 class using which you can submit audio files for transcribing and
 uderstanding it better.
 
+``` python
+from afiz_speech_text.assemblyai import AssemblyAI
+```
+
 First create the assembly_ai instance by providing the AssemblyAI API
 KEY, which you can get it for free from
 [here](https://app.assemblyai.com/)
