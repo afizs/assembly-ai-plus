@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "afiz-speech-text"
+  site-url: "https://afizs.github.io/afiz-speech-text"
+  description: "Transcribe and understand your audio/video files super fast."
+  repo-branch: main
+  repo-url: "https://github.com/afizs/afiz-speech-text"
