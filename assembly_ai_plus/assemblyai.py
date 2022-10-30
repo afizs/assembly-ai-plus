@@ -37,7 +37,7 @@ def submit_url_for_transcription(self:AssemblyAI,
                                  entity_detection: bool = False, # Include Entity Detection
                                  auto_highlights: bool = False, # Include Auto Highlights 
                                  summarization: bool = False, # Include Summary 
-                                 summary_type: str = "bullets", # If summary is included select `summary_type` from list [`bullets', 
+                                 summary_type: str = "bullets", # If summary is included select `summary_type` from list [`bullets', 'bullets_verbose', 'gist', 'paragraph', 'headline']. Check out this for more details: https://www.assemblyai.com/docs/audio-intelligence#summarization 
                                 ):
         ''' Submit Audio/Video URL for Transcription '''
         json = {
