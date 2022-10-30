@@ -6,6 +6,7 @@ __all__ = ['submit_transcript', 'AssemblyAI']
 # %% ../nbs/00_assemblyai.ipynb 2
 from fastcore.utils import *
 import requests
+import time
 
 # %% ../nbs/00_assemblyai.ipynb 4
 submit_transcript = "https://api.assemblyai.com/v2/transcript" # AssemblyAI endpoint
