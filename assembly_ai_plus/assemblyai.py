@@ -41,6 +41,7 @@ def submit_url_for_transcription(self:AssemblyAI,
                                  summary_type: str = "bullets", # If summary is included select `summary_type` from list [`bullets', 'bullets_verbose', 'gist', 'paragraph', 'headline']. Check out this for more details: https://www.assemblyai.com/docs/audio-intelligence#summarization 
                                 ):
         ''' Submit Audio/Video URL for Transcription '''
+        
         json = {
             "audio_url": audio_url,
             "sentiment_analysis": sentiment_analysis,
@@ -48,6 +49,10 @@ def submit_url_for_transcription(self:AssemblyAI,
             "entity_detection": entity_detection,
             "auto_highlights": auto_highlights,
         }
+        
+        json = {**json, 'summarization': True, 'summary_type': summary_type} if summarization else json
+            
+        
         response = requests.post(submit_transcript, json=json, headers=self.get_headers())
         return response.json()
 
