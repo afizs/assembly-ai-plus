@@ -20,7 +20,7 @@ pip install assembly-ai-plus
 This Library provides a
 [`AssemblyAI`](https://afizs.github.io/assembly-ai-plus/assemblyai.html#assemblyai)
 class using which you can submit audio files for transcribing and
-uderstanding it better.
+understanding.
 
 ``` python
 from assembly_ai_plus.assemblyai import AssemblyAI
@@ -31,7 +31,7 @@ KEY, which you can get it for free from
 [here](https://app.assemblyai.com/)
 
 ``` python
-assembly_ai = AssemblyAI(api_key=YOUR_API_KEY)
+assembly_ai = AssemblyAI(api_key='YOUR_API_KEY')
 ```
 
 ### Submit the audio url for transcription

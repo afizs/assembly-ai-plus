@@ -36,6 +36,8 @@ def submit_url_for_transcription(self:AssemblyAI,
                                  auto_chapters: bool = False, # Include Auto Chapaters
                                  entity_detection: bool = False, # Include Entity Detection
                                  auto_highlights: bool = False, # Include Auto Highlights 
+                                 summarization: bool = False, # Include Summary 
+                                 summary_type: str = "bullets", # If summary is included select `summary_type` from list [`bullets', 
                                 ):
         ''' Submit Audio/Video URL for Transcription '''
         json = {
