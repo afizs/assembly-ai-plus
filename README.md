@@ -19,10 +19,10 @@ pip install assembly-ai-plus
 ``` mermaid
 sequenceDiagram
   participant User
-  User-&gt;&gt;submit_audio_for_transcription: Audio URL or Local file path and include other intelligence features
-  submit_audio_for_transcription--&gt;&gt;User: transcription_id
-  User-&gt;&gt;get_transcription_results: transcription_id, all_details=True/False
-  get_transcription_results--&gt;&gt;User: Full Transcription Results
+  User->>submit_audio_for_transcription: Audio URL or Local file path and include other intelligence features
+  submit_audio_for_transcription-->>User: transcription_id
+  User->>get_transcription_results: transcription_id, all_details=True/False
+  get_transcription_results-->>User: Full Transcription Results
 ```
 
 ## How to use
