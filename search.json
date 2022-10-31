@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "assemblyai.html",
+    "href": "assemblyai.html",
+    "title": "assemblyai",
+    "section": "",
+    "text": "source\n\nread_file\n\n read_file (filename, chunk_size=5242880)\n\n\nsource\n\n\nAssemblyAI\n\n AssemblyAI (api_key:str)\n\nAssemblAI class for transcribing\n\n\n\n\n\n\n\n\n\nType\nDetails\n\n\n\n\napi_key\nstr\nAssemblyAI API Key, Get it for free from https://app.assemblyai.com/\n\n\n\n\nsource\n\n\nAssemblyAI.upload_local_file\n\n AssemblyAI.upload_local_file (local_file_path:str)\n\nUpload the local file and get audio_url in response, which can be used to sumbit for transcription\n\n\n\n\nType\nDetails\n\n\n\n\nlocal_file_path\nstr\nLocal Audio File path\n\n\n\n\nsource\n\n\nAssemblyAI.submit_audio_for_transcription\n\n AssemblyAI.submit_audio_for_transcription (audio_url:str='',\n                                            local_audio_file_path:str='',\n                                            sentiment_analysis:bool=False,\n                                            auto_chapters:bool=False,\n                                            entity_detection:bool=False,\n                                            auto_highlights:bool=False,\n                                            summarization:bool=False,\n                                            summary_type:str='bullets')\n\nSubmit Audio URL or the Local file Path for Transcription\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\naudio_url\nstr\n\nAudio URL\n\n\nlocal_audio_file_path\nstr\n\nLocal Audio File Path. Provide audio_url or local_audio_file_path . If both are provided, audio_url is used by default.\n\n\nsentiment_analysis\nbool\nFalse\nInclude Sentiment Analysis\n\n\nauto_chapters\nbool\nFalse\nInclude Auto Chapaters\n\n\nentity_detection\nbool\nFalse\nInclude Entity Detection\n\n\nauto_highlights\nbool\nFalse\nInclude Auto Highlights\n\n\nsummarization\nbool\nFalse\nInclude Summary\n\n\nsummary_type\nstr\nbullets\nIf summary is included select summary_type from list [`bullets’, ‘bullets_verbose’, ‘gist’, ‘paragraph’, ‘headline’]. Check out this for more details: https://www.assemblyai.com/docs/audio-intelligence#summarization\n\n\n\n\nsource\n\n\nAssemblyAI.submit_url_for_transcription\n\n AssemblyAI.submit_url_for_transcription (audio_url:str='',\n                                          sentiment_analysis:bool=False,\n                                          auto_chapters:bool=False,\n                                          entity_detection:bool=False,\n                                          auto_highlights:bool=False,\n                                          summarization:bool=False,\n                                          summary_type:str='bullets')\n\nSubmit Audio URL or the Local file Path for Transcription\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\naudio_url\nstr\n\nAudio URL\n\n\nsentiment_analysis\nbool\nFalse\nInclude Sentiment Analysis\n\n\nauto_chapters\nbool\nFalse\nInclude Auto Chapaters\n\n\nentity_detection\nbool\nFalse\nInclude Entity Detection\n\n\nauto_highlights\nbool\nFalse\nInclude Auto Highlights\n\n\nsummarization\nbool\nFalse\nInclude Summary\n\n\nsummary_type\nstr\nbullets\nIf summary is included select summary_type from list [`bullets’, ‘bullets_verbose’, ‘gist’, ‘paragraph’, ‘headline’]. Check out this for more details: https://www.assemblyai.com/docs/audio-intelligence#summarization\n\n\n\n\nsource\n\n\nAssemblyAI.get_transcription_results\n\n AssemblyAI.get_transcription_results (transcripiton_id:str,\n                                       all_details:bool=False)\n\nGet the transcription results for the given id\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\ntranscripiton_id\nstr\n\nTranscrption ID that we got from submit_url_for_transcription\n\n\nall_details\nbool\nFalse\nInclude All the details, by default it text and id are returned"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "assembly-ai-plus",
+    "section": "",
+    "text": "Simple Library for transcribing and understanding audio and video files using AssemblyAI.\nRead more about AssemblyAI 👉 Docs"
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "assembly-ai-plus",
+    "section": "Install",
+    "text": "Install\npip install assembly-ai-plus\n\nHow it works\n\n\n\n\nsequenceDiagram\n  participant User\n  User->>submit_audio_for_transcription: Audio URL or Local file path and include other intelligence features\n  submit_audio_for_transcription-->>User: transcription_id\n  User->>get_transcription_results: transcription_id, all_details=True/False\n  get_transcription_results-->>User: Full Transcription Results"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "assembly-ai-plus",
+    "section": "How to use",
+    "text": "How to use\nThis Library provides a AssemblyAI class using which you can submit audio files for transcribing and understanding.\n\nfrom assembly_ai_plus.assemblyai import AssemblyAI\n\nFirst create the assembly_ai instance by providing the AssemblyAI API KEY, which you can get it for free from here\n\nassembly_ai = AssemblyAI(api_key='YOURKEY')\n\n\nSubmit the audio url for transcription\n\nres = assembly_ai.submit_audio_for_transcription(audio_url=\"https://bit.ly/3yxKEIY\")\n\n\nres.get('id') # This id is used to extract the actual text from the audio files.\n\n'rsh0hzmusy-024f-472e-937b-e86223eaf7c9'\n\n\n\n\nSumbit Local Audio file for transcription\n\nres = assembly_ai.submit_audio_for_transcription(local_audio_file_path='your_file_path')\n\n\nres.get('id')\n\n'rsh0n4g7nv-f022-409b-b97b-9a138261a0d7'\n\n\n\n\nGetting the Transcription Result\n\nfull_details = assembly_ai.get_transcription_results('rs3c8julbq-177d-4071-ab6f-d7c7a9bb6dbb')\n\n\nprint(full_details['text'])\n\nYou know, demons on TV like that. And and for people to expose themselves to being rejected on TV or, you know, humili humiliated by Fear Factor or, you know.\n\n\nWe can check out other details like sentiment analysis from full_details"
+  }
+]
