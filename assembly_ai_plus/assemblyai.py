@@ -93,6 +93,26 @@ def submit_audio_for_transcription(self:AssemblyAI,
 
 # %% ../nbs/00_assemblyai.ipynb 8
 @patch
+def submit_url_for_transcription(self:AssemblyAI,
+                                   audio_url: str='', #Audio URL
+                                   sentiment_analysis: bool = False, # Include Sentiment Analysis
+                                   auto_chapters: bool = False, # Include Auto Chapaters
+                                   entity_detection: bool = False, # Include Entity Detection
+                                   auto_highlights: bool = False, # Include Auto Highlights 
+                                   summarization: bool = False, # Include Summary 
+                                   summary_type: str = "bullets", # If summary is included select `summary_type` from list [`bullets', 'bullets_verbose', 'gist', 'paragraph', 'headline']. Check out this for more details: https://www.assemblyai.com/docs/audio-intelligence#summarization 
+                                   ):
+    ''' Submit Audio URL or the Local file Path for Transcription '''
+    return self.submit_audio_for_transcription(audio_url,
+                                               sentiment_analysis,
+                                               auto_chapters,
+                                               entity_detection, 
+                                               auto_chapters,
+                                               summarization,
+                                               summary_type)
+
+# %% ../nbs/00_assemblyai.ipynb 9
+@patch
 def get_transcription_results(self:AssemblyAI,
                               transcripiton_id: str, # Transcrption ID that we got from `submit_url_for_transcription`
                               all_details: bool = False # Include All the details, by default it `text` and `id` are returned

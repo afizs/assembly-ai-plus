@@ -41,7 +41,7 @@ KEY, which you can get it for free from
 [here](https://app.assemblyai.com/)
 
 ``` python
-assembly_ai = AssemblyAI(api_key='5fc6770f296f4ea298a9b871f9467af6')
+assembly_ai = AssemblyAI(api_key='YOURKEY')
 ```
 
 ### Submit the audio url for transcription
