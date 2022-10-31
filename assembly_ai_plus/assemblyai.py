@@ -67,7 +67,7 @@ def get_transcription_results(self:AssemblyAI,
     status = full_details.get("status")
     while status not in ["completed", "error"]:
         time.sleep(5)  # sleep for secs
-        full_details = get_status_of_transcription(transcripiton_id)
+        full_details = self.get_status_of_transcription(transcripiton_id)
         status = full_details.get("status")
 
     if all_details:
