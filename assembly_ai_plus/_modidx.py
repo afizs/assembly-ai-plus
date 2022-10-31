@@ -15,5 +15,9 @@ d = { 'settings': { 'branch': 'main',
                                                                                                                      'assembly_ai_plus/assemblyai.py'),
                                              'assembly_ai_plus.assemblyai.AssemblyAI.get_transcription_results': ( 'assemblyai.html#assemblyai.get_transcription_results',
                                                                                                                    'assembly_ai_plus/assemblyai.py'),
-                                             'assembly_ai_plus.assemblyai.AssemblyAI.submit_url_for_transcription': ( 'assemblyai.html#assemblyai.submit_url_for_transcription',
-                                                                                                                      'assembly_ai_plus/assemblyai.py')}}}
+                                             'assembly_ai_plus.assemblyai.AssemblyAI.submit_audio_for_transcription': ( 'assemblyai.html#assemblyai.submit_audio_for_transcription',
+                                                                                                                        'assembly_ai_plus/assemblyai.py'),
+                                             'assembly_ai_plus.assemblyai.AssemblyAI.upload_local_file': ( 'assemblyai.html#assemblyai.upload_local_file',
+                                                                                                           'assembly_ai_plus/assemblyai.py'),
+                                             'assembly_ai_plus.assemblyai.read_file': ( 'assemblyai.html#read_file',
+                                                                                        'assembly_ai_plus/assemblyai.py')}}}

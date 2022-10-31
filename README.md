@@ -14,6 +14,17 @@ Read more about AssemblyAI 👉 [Docs](https://www.assemblyai.com/docs)
 pip install assembly-ai-plus
 ```
 
+### How it works
+
+``` mermaid
+sequenceDiagram
+  participant User
+  User-&gt;&gt;submit_audio_for_transcription: Audio URL or Local file path and include other intelligence features
+  submit_audio_for_transcription--&gt;&gt;User: transcription_id
+  User-&gt;&gt;get_transcription_results: transcription_id, all_details=True/False
+  get_transcription_results--&gt;&gt;User: Full Transcription Results
+```
+
 ## How to use
 
 This Library provides a
@@ -30,20 +41,32 @@ KEY, which you can get it for free from
 [here](https://app.assemblyai.com/)
 
 ``` python
-assembly_ai = AssemblyAI(api_key='YOUR_API_KEY')
+assembly_ai = AssemblyAI(api_key='5fc6770f296f4ea298a9b871f9467af6')
 ```
 
 ### Submit the audio url for transcription
 
 ``` python
-res = assembly_ai.submit_url_for_transcription(audio_url="https://bit.ly/3yxKEIY")
+res = assembly_ai.submit_audio_for_transcription(audio_url="https://bit.ly/3yxKEIY")
 ```
 
 ``` python
 res.get('id') # This id is used to extract the actual text from the audio files.
 ```
 
-    'rs3c8julbq-177d-4071-ab6f-d7c7a9bb6dbb'
+    'rsh0hzmusy-024f-472e-937b-e86223eaf7c9'
+
+### Sumbit Local Audio file for transcription
+
+``` python
+res = assembly_ai.submit_audio_for_transcription(local_audio_file_path='your_file_path')
+```
+
+``` python
+res.get('id')
+```
+
+    'rsh0n4g7nv-f022-409b-b97b-9a138261a0d7'
 
 ### Getting the Transcription Result
 
